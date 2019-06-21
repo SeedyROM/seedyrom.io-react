@@ -1,20 +1,11 @@
 import styled from "styled-components";
-import React, { useState, useEffect } from 'react';
-import posed, { PoseGroup } from "react-pose";
+import React from 'react';
+import posed from "react-pose";
 import { easing } from "popmotion";
 
 import cd from "../assets/cd.svg";
 
-const LoadingOverlayAnimation = posed.div({
-  enter: {
-    opacity: 1,
-  },
-  exit: {
-    opacity: 0,
-  }
-});
-
-export const LoadingOverlay = styled(LoadingOverlayAnimation)`
+export const LoadingOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -51,7 +42,7 @@ export const LoadingBar = styled(LoadingBarAnimation)`
   left: 0;
 `;
 
-const LoadingIconAnimation = posed.div({
+const LoadingIcon = posed.div({
   showing: {
     opacity: 1,
     scale: 1,
@@ -83,17 +74,11 @@ const LoadingIconAnimation = posed.div({
   },
 });
 
-const LoadingIcon = styled(LoadingIconAnimation)`
-  line-height: 0;
-`;
-
-const loadingPose = (v: boolean) => (v) ? "enter" : "exit"; 
-
-export const Loading: React.FC = () => (
+export const Loading: React.FC<any> = (props) => (
   <LoadingOverlay>
-    <LoadingIconAnimation initialPose="hidden" pose="showing">
+    <LoadingIcon initialPose="hidden" pose="showing">
       <img width="100" height="100" src={cd} alt="Loading..." />
-    </LoadingIconAnimation>
+    </LoadingIcon>
     <LoadingBar initialPose="hidden" pose="showing" />
   </LoadingOverlay>
 );
