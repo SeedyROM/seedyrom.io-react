@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React from 'react';
 import posed from "react-pose";
 import { easing } from "popmotion";
+import colors from '../theme/colors';
 
 export const LoadingOverlay = styled.div`
   position: fixed;
@@ -14,8 +15,8 @@ export const LoadingOverlay = styled.div`
   justify-content: center;
   align-items: center;
 
-  background: #153DAD;
-  color: #f3f3f3;
+  background: ${colors.blue};
+  color: ${colors.white};
 `;
 
 export const LoadingBarAnimation = posed.div({
@@ -33,7 +34,7 @@ export const LoadingBarAnimation = posed.div({
 });
 
 export const LoadingBar = styled(LoadingBarAnimation)`
-  background: #f3f3f3;
+  background: ${colors.white};
   position: fixed;
   height: 5px;
   top: calc(75vh - 50px);
@@ -73,7 +74,7 @@ const LoadingIcon = posed.div({
 });
 
 export const Loading: React.FC<any> = (props) => (
-  <LoadingOverlay>
+  <LoadingOverlay role="alertdialog" aria-busy="true">
     <LoadingIcon initialPose="hidden" pose="showing">
       <img width="100" height="100" src="/icons/cd.svg" alt="Loading..." />
     </LoadingIcon>
