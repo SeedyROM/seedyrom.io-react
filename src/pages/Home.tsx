@@ -23,7 +23,8 @@ const Home: React.FC = () => {
   return (
     <>
       <PoseGroup>
-        {(loading) ? <Loading key="loading" /> : <Message key="message" />}
+        {loading && (<Loading key="loading" />)}
+        <Message key="message" />
       </PoseGroup>
     </>
   )

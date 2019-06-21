@@ -34,8 +34,9 @@ export const LoadingBarAnimation = posed.div({
     width: '100vw',
     transition: {
       duration: 1000,
-      ease: 'easeInOut'
-    }
+      ease: easing.cubicBezier(.54,.1,.28,.93),
+    },
+    delay: 500,
   },
   hidden: {
     width: '0vw',
@@ -46,7 +47,7 @@ export const LoadingBar = styled(LoadingBarAnimation)`
   background: #f3f3f3;
   position: fixed;
   height: 5px;
-  top: 75vh;
+  top: calc(75vh - 50px);
   left: 0;
 `;
 
