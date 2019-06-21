@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { PoseGroup } from 'react-pose';
 
 import { Loading } from "../components/Loading";
-import posed, { PoseGroup } from 'react-pose';
+import { FadeIn } from '../helpers/animations';
 
-const FadeIn = posed.div({
-  exit: {
-    opacity: 0,
-  },
-
-  enter: {
-    opacity: 1,
-  }
-});
 
 const Home: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -25,14 +17,15 @@ const Home: React.FC = () => {
   return (
     <>
       <PoseGroup>
-        { loading && (
-          <FadeIn key="loading">
+        { (loading) ? (
+          <FadeIn initialPose="exit" key="loading">
             <Loading />
           </FadeIn>
+        ) : (
+          <FadeIn delayIn={300} duration={300} key="message">
+            Hello
+          </FadeIn>
         )}
-        <FadeIn key="message">
-          Hello
-        </FadeIn>
       </PoseGroup>
     </>
   )

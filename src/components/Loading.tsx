@@ -3,8 +3,6 @@ import React from 'react';
 import posed from "react-pose";
 import { easing } from "popmotion";
 
-import cd from "../assets/cd.svg";
-
 export const LoadingOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -77,7 +75,7 @@ const LoadingIcon = posed.div({
 export const Loading: React.FC<any> = (props) => (
   <LoadingOverlay>
     <LoadingIcon initialPose="hidden" pose="showing">
-      <img width="100" height="100" src={cd} alt="Loading..." />
+      <img width="100" height="100" src="/icons/cd.svg" alt="Loading..." />
     </LoadingIcon>
     <LoadingBar initialPose="hidden" pose="showing" />
   </LoadingOverlay>
