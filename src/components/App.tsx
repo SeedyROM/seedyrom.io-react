@@ -1,7 +1,8 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from '../pages/Home';
+import { makeDepthDiv } from '../helpers/scrollBox';
 
 const App: React.FC = () => {
   return (
