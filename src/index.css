@@ -1,13 +1,19 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "~normalize.css";
+
+@import url('https://fonts.googleapis.com/css?family=Barlow:200i,400,700i,900i|Gothic+A1:200,400,600&display=swap');
+
+/* Universal inherited quirks mode */ 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+main {
+  min-height: 100vh;
+  min-height: calc(100vh - var(--vh-offset, 0px));
+
+  font-family: "Gothic A1", sans-serif;
+  letter-spacing: 0.015em;
 }

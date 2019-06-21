@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
-import App from './App';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+
+import vhCheck from "vh-check";
+vhCheck();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
