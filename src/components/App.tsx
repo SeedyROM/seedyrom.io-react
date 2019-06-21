@@ -1,19 +1,15 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { LoadingOverlay } from './Loading';
-
-const Home = lazy(() => import('../pages/Home'));
+import Home from '../pages/Home';
 
 const App: React.FC = () => {
   return (
     <main>
       <Router>
-        <Suspense fallback={<LoadingOverlay />}>
-          <Switch>
-            <Route exact path="/" component={Home} />
-          </Switch>
-        </Suspense>
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
       </Router>
     </main>
   );
