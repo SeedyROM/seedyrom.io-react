@@ -17,7 +17,7 @@ const colorLuminance = (hex: string, lum: number) => {
 	return rgb;
 }
 
-export const makeDepthDiv = ($el: any, depth: number, numEls: number, settings: any) => {
+export const makeDepthDiv = ($el: any, depth: number, numEls: number, settings?: any) => {
   settings = settings || {};
 
 	// THE FUCK IS THIS SHIT? Random values comming from the css padding depends on page and state...
