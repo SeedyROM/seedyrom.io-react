@@ -42,6 +42,10 @@ export const LinkBackground = styled.div`
 
   &.hover {
     right: 0;
+
+    @media only screen and (max-width: ${breakpoints.mobile}) {
+      right: 50px;
+    }
   }
 `;
 
@@ -81,5 +85,7 @@ export const LinkBody = styled.div`
 
   @media only screen and (max-width: ${breakpoints.mobile}) {
     font-size: 3em;
+    padding: 0 1.5rem;
+
   }
 `;

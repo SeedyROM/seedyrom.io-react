@@ -20,7 +20,7 @@ const Link: React.FC<LinkProps> = props => {
       style={{
         position: "relative",
         display: "inline-block",
-        width: `${props.title.length * 6.8}ch`,
+        width: `${props.title.length * 4}em`,
         marginBottom: "0.5rem",
       }}
       onMouseEnter={handleMouseEnter}

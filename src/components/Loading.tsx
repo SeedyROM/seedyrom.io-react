@@ -3,6 +3,7 @@ import React from 'react';
 import posed from "react-pose";
 import { easing } from "popmotion";
 import colors from '../theme/colors';
+import breakpoints from "../theme/breakpoints";
 
 export const LoadingOverlay = styled.div`
   position: fixed;
@@ -17,6 +18,10 @@ export const LoadingOverlay = styled.div`
 
   background: ${colors.blue};
   color: ${colors.white};
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    padding-bottom: 7em;
+  }
 `;
 
 export const LoadingBarAnimation = posed.div({
@@ -39,6 +44,10 @@ export const LoadingBar = styled(LoadingBarAnimation)`
   height: 5px;
   top: calc(75vh - 50px);
   left: 0;
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    height: 15px;
+  }
 `;
 
 const LoadingIcon = posed.div({
@@ -73,10 +82,24 @@ const LoadingIcon = posed.div({
   },
 });
 
+const Icon = styled.div`
+  img {
+    width: 100px;
+    height: 100px;
+    
+    @media only screen and (max-width: ${breakpoints.mobile}) {
+      width: 125px;
+      height: 125px;
+    }
+  }
+`;
+
 export const Loading: React.FC<any> = (props) => (
   <LoadingOverlay role="alertdialog" aria-busy="true">
     <LoadingIcon initialPose="hidden" pose="showing">
-      <img width="100" height="100" src="/icons/cd.svg" alt="Loading..." />
+      <Icon>
+        <img src="/icons/cd.svg" alt="Loading..." />
+      </Icon>
     </LoadingIcon>
     <LoadingBar initialPose="hidden" pose="showing" />
   </LoadingOverlay>
