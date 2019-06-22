@@ -60,9 +60,10 @@ export const LinkBody = styled.div`
   padding: 0 2rem;
   line-height: 1;
 
-  color: ${colors.white};
+  color: ${color(colors.orange).lighten(0.86).hex()};
 
   text-align: left;
+  letter-spacing: 0.05em;
 
   transition: 
     letter-spacing 0.5s ease-in-out,
@@ -74,9 +75,8 @@ export const LinkBody = styled.div`
 
   &:hover {
     cursor: pointer;
-    color: ${color(colors.orange).lighten(0.4).hex()};
-
-    letter-spacing: 0.05em;
+    color: ${colors.white};
+    letter-spacing: 0;
   }
 
   @media only screen and (max-width: ${breakpoints.mobile}) {
