@@ -8,6 +8,11 @@ export const Container = styled.div`
   position: relative;
   background-color: ${colors.orange};
   color: #f3f3f3;
+
+  /* HACKS */
+  /* background: url("https://images.pexels.com/photos/2117938/pexels-photo-2117938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-position: 50% 50%; */
   
   min-height: 100vh;
   min-height: calc(100vh - var(--vh-offset, 0px));
@@ -65,6 +70,7 @@ export const LinkBody = styled.div`
   line-height: 1;
 
   color: ${color(colors.orange).lighten(0.86).hex()};
+
 
   text-align: left;
   letter-spacing: 0.05em;
